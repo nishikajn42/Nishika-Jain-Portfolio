@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="./assest/aletter1.png" type="image/png" /> -->
+    <title>Portfolio - Nishika Jain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@imgly/background-removal@1.4.5/dist/browser/imglyRemoveBackground.umd.js"></script>
+    <link rel="stylesheet" href="/Portfolio/style.css">
+</head>
+<body>
+    <div class="main" data-scroll-container>
+        <header id="header">
+            <div class="logo magnet">Nishika:)</div>
+            <!-- NAVBAR -->
+            <nav>
+                <ul>
+                    <li><a href="#header" data-scroll-to>Home</a></li>
+                    <li><a href="#page2" data-scroll-to>About</a></li>
+                    <li><a href="#page3" data-scroll-to>Skills</a></li>
+                    <li><a href="#page4" data-scroll-to>Projects</a></li>
+                    <li><a href="#page5" data-scroll-to>Qualification</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- FIRST PAGE -->
+        <div class="bg">
+            <div class="iam" data-scroll data-scroll-speed="-1">I'm</div>
+            <div class="nishikajain" data-scroll data-scroll-speed="3">
+                Nishika&nbsp;&nbsp;Jain
+            </div>
+            <div class="circlebg">
+                <img
+                    data-scroll
+                    data-scroll-speed="-10"
+                    data-scroll-direction="horizontal"
+                    src=""
+                    alt=""
+                />
+            </div>
+        </div>
+        <!-- PAGE 2 (ABOUT PAGE) -->
+        <div class="page2" id="page2">
+            <div class="pg2content">
+                <div class="left">
+                    <h1>Frontend <br><span id="highlight">Developer</span> & <br>UI <span id="highlight">Enthusiast</span></h1>
+                    <p>Hi, I'm Nishika Jain — a B.Tech student who loves turning ideas into interactive digital experiences.
+                    Currently, I'm focused on strengthening my frontend development skills and building projects that reflect both functionality and personality.
+                    <br>Alongside my current focus, I am actively exploring Artificial Intelligence and Machine Learning. I aspire to combine intelligent systems with intuitive user interfaces, building applications that are not only visually engaging but also data-driven and impactful.
+                    <br>With a keen eye for detail and a problem-solving mindset, I aim to grow as a developer who bridges the gap between design, development, and emerging technologies.</p>
+                </div>
+                <div class="right">
+                    <div
+                        data-scroll data-scroll-speed="1.5" class="image parallax-container"
+                        onmousemove="parallaxHover(event)"
+                        onmouseleave="resetParallax(this)" >
+                        <img src="/Portfolio/images/linkedin_profile.jpeg" alt="" class="layer" />
+                    </div>
+                    <div class="button">
+                        <a
+                            data-scroll
+                            data-scroll-speed="1.5"
+                            href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn slide-fill">Resume
+                        </a>
+                        <a
+                            data-scroll
+                            data-scroll-speed="1.5"
+                            href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn slide-fill">Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PAGE 3 -->
+
+    </div>
+    <script src="/Portfolio/script.js"></script>
+</body>
+</html>
