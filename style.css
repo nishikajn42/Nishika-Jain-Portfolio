@@ -19,10 +19,15 @@
 :root {
     --accent-gold: #d1b059;
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* This removes the extra horizontal scroll/space */
+    position: relative;
+    width: 100%;
+}
 
-html,
-body {
-    height: 100%;
+.main {
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -90,15 +95,18 @@ nav ul li:hover a {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .circlebg img {
   height: 45vw;
   padding-top: 1vw;
-  padding-left: 7vw;
+  padding-left: 12vw;
   padding-bottom: 3vw;
   margin-bottom: 3.8vw;
-  z-index: 2;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70vw;
 }
 .iam {
   font-weight: 550;
@@ -109,17 +117,29 @@ nav ul li:hover a {
   position: absolute;
 }
 .nishikajain {
-  font-size: 13vw;
-  padding-top: 15vw;
-  font-weight: 700;
+  font-size: 13vw; 
+  padding-top: 25vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  gap: 2vw;
+  position: absolute;
   color:  var(--accent-gold);
   z-index: 1;
+  left: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 1vw;
-  padding-left: 3vw;
-  position: absolute;
+  letter-spacing: vw;
+  padding-left: 40px;
+  padding-right: 180px;
+  font-weight: 700;
+  /* padding-top: 15vw; */
 }
 
+.iam, .first-name, .last-name, .circlebg img {
+    opacity: 0; /* Start hidden so GSAP can fade them in */
+    display: inline-block;
+}
 .page2 {
   background-color: #212225;
   border-top: 12px solid black;
@@ -242,6 +262,132 @@ nav ul li:hover a {
 }
 
 
+/*  --------------------------- Page 3 --------------------------- */
+.page3 {
+  background-color: #212225;
+  border-top: 12px solid black;
+  height:100%;
+}
+.skills {
+  color: var(--accent-gold);
+  font-size: 7rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-top: 30px;
+  padding: 0vw 2vw;
+}
+.skills-card {
+  padding: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7vw;
+  height:75vh;
+  flex-wrap: wrap;
+}
+
+.skill-btn{
+  height: 70px;
+  width: 380px;
+  background: #C9A84C18; 
+  border: 0.5px solid black;
+  color: var(--accent-gold);
+  font-size: 1.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skill-btn:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+}
+/*  --------------------------- Page 4 --------------------------- */
+.page4 {
+  background-color: #212225;
+  border-top: 12px solid black;
+  height:100%;
+  /* padding-bottom: 50px; */
+}
+.projects{
+  color: var(--accent-gold);
+  font-size: 7rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-top: 30px;
+  padding: 0vw 2vw;
+}
+.projects-card-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; 
+  padding: 2rem;
+  height:75vh;
+}
+
+.project-card {
+  height:273px;
+  width: 340px; 
+  background: #1a1a1a; 
+  border: 0.5px solid #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+}
+.proj-card-content{
+  height:223px;
+}
+.proj-tag {
+  display: inline-block;
+  background: #C9A84C18;
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+.proj-tag a {
+  text-decoration: none;
+  color:var(--accent-gold);
+}
+.proj-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+.proj-desc { 
+  font-size: 12px; 
+  color: var(--muted); 
+  line-height: 1.6; 
+}
+
+.proj-footer { 
+  display: flex; 
+  gap: 0.5rem; 
+  margin-top: 1rem; 
+  flex-wrap: wrap; 
+}
+
+.tech-chip {
+  font-size: 10px;
+  background: #222;
+  color: #888;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
 /*  --------------------------- Page 5 --------------------------- */
 .page5 {
   background-color: #212225;
@@ -258,11 +404,10 @@ nav ul li:hover a {
 }
 .qualification-card {
   padding-top: 4rem;
-  height: 100vh;
   display: flex;
   justify-content: center;
   gap: 8vw;
-  height:78vh;
+  height:75vh;
 }
 
 .school {
@@ -409,6 +554,76 @@ nav ul li:hover a {
   border-color: var(--accent-gold); 
   color: var(--accent-gold);
   transform: scale(1.5);
+}
+
+@media (max-width: 768px) {
+    .nishikajain {
+        flex-direction: column; /* Stack names on mobile */
+        align-items: center;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 15vw;
+        top: 20%;
+    }
+    .iam {
+        font-size: 15vw;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+    }
+}
+@media (max-width: 1024px) {
+    /* Adjust Project Cards */
+    .projects-card-container {
+        height: auto; /* Let content define height */
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 50px 20px;
+    }
+
+    /* Adjust Skill Buttons */
+    .skills-card {
+        height: auto;
+        padding: 2rem;
+        margin: 1rem;
+        flex-direction: row; /* Allow them to wrap naturally */
+        justify-content: center;
+    }
+    
+    .skill-btn {
+        width: 100%; /* Make buttons full width or smaller */
+        max-width: 300px;
+    }
+    
+    .pg2content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pg2content .left h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects, .skills, .qualification {
+        font-size: 3.5rem; /* Shrink titles on small phones */
+    }
+    
+    .project-card {
+        width: 100%; /* Cards take full width */
+    }
+    
+    .school, .college {
+        width: 90vw;
+        height: auto;
+    }
+    
+    .school-img, .clg-image {
+        width: 100%;
+    }
 }
 /* @media (max-width: 640px) {
   .bg .page2{ 
